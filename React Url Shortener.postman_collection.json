@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "6a147024-f099-4150-83f4-7361aff7dbac",
+		"name": "React Url Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Url",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"http://test.com\",\n    \"valid_until\": \"2020-10-16\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/urls/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"urls",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/statistics/:url_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"statistics",
+						":url_id"
+					],
+					"variable": [
+						{
+							"key": "url_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
